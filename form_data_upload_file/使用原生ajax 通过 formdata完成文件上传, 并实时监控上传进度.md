@@ -7,10 +7,10 @@
 - 下面是一个原生js使用ajax 完成 FormData上传文件, 并实时监听文件上传进度的小Demo, 前后端均已完成代码实现(后端为nodejs实现)
 
 ## GIF效果展示
-> ![](https://raw.githubusercontent.com/zhaoolee/GraphBed/master/images/90ff7fabf351bd0ae3ea012fe24b335c)
+> ![](https://raw.githubusercontent.com/zhaoolee/GraphBed/master/zhaoolee_images000000/9a1528468073a655aa9556098bb43801)
 
 
-> ![](https://raw.githubusercontent.com/zhaoolee/GraphBed/master/images/e7f41cc980d4d8ebbafbbc97e101bc8d)
+> ![](https://raw.githubusercontent.com/zhaoolee/GraphBed/master/zhaoolee_images000000/c6aacda7111f04d6896a6926e45d8942)
 
 
 
@@ -113,7 +113,7 @@ server.listen(8080, function(){
 ```
 
 ## Gif图中使用的小姐姐图片素材
-> ![](https://raw.githubusercontent.com/zhaoolee/GraphBed/master/images/af12b6c58090de381850bcb78375679a)
+> ![](https://raw.githubusercontent.com/zhaoolee/GraphBed/master/zhaoolee_images000000/db48ac3222b671d4bd4025a4d272275a)
 > - [点我获取上图超清版](https://github.com/zhaoolee/FrontEndClubIsBook/raw/master/%E3%80%8A%E5%80%BC%E5%BE%97%E6%94%B6%E8%97%8F%E7%9A%84%E5%A3%81%E7%BA%B8%E3%80%8B/%E6%B1%9F%E5%8D%97%E7%83%A7%E9%85%92.jpg)
 ## 小结:
 
