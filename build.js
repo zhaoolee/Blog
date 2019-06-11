@@ -48,13 +48,13 @@ function addContentsInfo(contents){
   // 生成目录md字符
 
   let new_contents_md = ""
-  new_contents_md += "---start\n\n";
+  new_contents_md += "---start---\n\n";
   contents.map((value, index)=>{
-    new_contents_md+="- ["+value["title"] + "](" + value["url"] + ")\n"
+    new_contents_md+="- ["+value["title"] + "](" + value["url"] + ")\n\n"
   })
-  new_contents_md += "\n\nend---\n";
+  new_contents_md += "\n\n---end---\n";
 
-  old_contents_md =  read_me_data_before.match(/---start[\s\S]*?end---/gi);
+  old_contents_md =  read_me_data_before.match(/---start---[\s\S]*?---end---/gi);
 
   read_me_data_after = read_me_data_before.replace(old_contents_md, new_contents_md)
   console.log("旧的README信息::", read_me_data_before);
