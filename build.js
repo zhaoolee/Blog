@@ -59,14 +59,10 @@ function addContentsInfo(contents){
   read_me_data_after = read_me_data_before.replace(old_contents_md, new_contents_md)
   console.log("旧的README信息::", read_me_data_before);
   console.log("新的README信息::", read_me_data_after);
-
-
+  console.log("链接信息:", contents);
   fs.writeFileSync("./README.md", read_me_data_after);
 
-
-
-
-
+  return contents;
 
 }
 
@@ -75,6 +71,8 @@ async function main(){
   let repo_github_url = "https://github.com/zhaoolee/Blog";
   // github文件地址
   let repo_github_file_url = repo_github_url+ "/" + "blob" + "/master";
+  // 纯粹的markdown地址
+  let markdown_data_base = "https://raw.githubusercontent.com/zhaoolee/Blog/master"
   // 当前项目所在目录
   let repo_local_path = path.resolve(__dirname);
   //读取目录下所有文件的路径
@@ -83,29 +81,37 @@ async function main(){
   let github_path_name_files = [];
   // 替换并生成github目录
   md_path_name_files.map((value, index)=>{
-    github_path_name_files.push(value.replace(repo_local_path, repo_github_file_url));
+    let url =value.replace(repo_local_path, repo_github_file_url); 
+    let markdown_url = url.replace("https://github.com/zhaoolee/Blog/blob", "https://raw.githubusercontent.com/zhaoolee/Blog")
+    github_path_name_files.push(
+      {
+        url: url,
+        markdown_url: markdown_url
+      }
+    );
   })
+  // 替换并生成markdonw数据目录
+
 
 
   // 目录信息
   let contents = []
 
   github_path_name_files.map((value, index)=>{
-    let contents_atom = {title: "", url: ""}
-    contents_atom["title"] = value.split("/").pop().replace(".md", "");
-    contents_atom["url"] = value
+    let contents_atom = {title: "", url: "", markdown_url: ""}
+    contents_atom["title"] = value["url"].split("/").pop().replace(".md", "");
+    contents_atom["url"] = value["url"];
+    contents_atom["markdown_url"] = value["markdown_url"];
     contents.push(contents_atom)
   })
 
-
-
-  addContentsInfo(contents);
-
-
-
+  return addContentsInfo(contents);
 
 }
 
 
 
 main();
+
+
+module.exports.build=main;
