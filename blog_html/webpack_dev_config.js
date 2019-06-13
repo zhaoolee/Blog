@@ -11,8 +11,8 @@ module.exports = merge(webpack_base_config, {
     devServer: {
         contentBase: path.join(__dirname),
         // 服务端口为9000
-        port: 9000,
-        host: "0.0.0.0",
+        port: 9600,
+        host: "127.0.0.1",
         // 自动打开浏览器
         open: true,
         hot: true,

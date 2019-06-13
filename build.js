@@ -18,7 +18,7 @@ async function get_file_path_name(dir){
     // 如果是文件夹, 返回文件夹内的文件数组
     if(stat.isDirectory()){
       let dir_name = value.split("/").pop()
-      if([".git", ".vscode"].indexOf(dir_name) === -1){
+      if([".git", ".vscode", "node_modules"].indexOf(dir_name) === -1){
         tmp_return = await get_file_path_name(value);
         tmp_return.map((value, index)=>{
           result.push(value)
@@ -50,7 +50,7 @@ function addContentsInfo(contents){
   let new_contents_md = ""
   new_contents_md += "---start---\n\n";
   contents.map((value, index)=>{
-    new_contents_md+="- ["+value["title"] + "](" + value["url"] + ")\n\n"
+    new_contents_md+="- ["+value["title"] + "](" + value["url"] + ") | [测试链接]("+ value["fangyuan_url"]+")"+"\n\n"
   })
   new_contents_md += "\n\n---end---\n";
 
@@ -83,10 +83,13 @@ async function main(){
   md_path_name_files.map((value, index)=>{
     let url =value.replace(repo_local_path, repo_github_file_url); 
     let markdown_url = url.replace("https://github.com/zhaoolee/Blog/blob", "https://raw.githubusercontent.com/zhaoolee/Blog")
+    let fangyuan_url = markdown_url.replace("https://raw.githubusercontent.com", "http://fangyuanxiaozhan.com")
+    fangyuan_url = fangyuan_url.replace(".md", "")
     github_path_name_files.push(
       {
         url: url,
-        markdown_url: markdown_url
+        markdown_url: markdown_url,
+        fangyuan_url: fangyuan_url
       }
     );
   })
@@ -102,6 +105,8 @@ async function main(){
     contents_atom["title"] = value["url"].split("/").pop().replace(".md", "");
     contents_atom["url"] = value["url"];
     contents_atom["markdown_url"] = value["markdown_url"];
+    contents_atom["fangyuan_url"] = value["fangyuan_url"];
+
     contents.push(contents_atom)
   })
 

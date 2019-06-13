@@ -1,6 +1,10 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import axios from 'axios';
+import {Switch, BrowserRouter as Router, Route, Link } from "react-router-dom";
+const pathToRegexp = require('path-to-regexp')
+import Article from './Article';
 
-import ReactDom from 'react-dom';
 
 class Index extends React.Component{
 
@@ -10,15 +14,29 @@ class Index extends React.Component{
   }
 
   componentDidMount(){
+
+    console.log("index-href::", window.location.href);
+    
   }
 
   render(){
     return(
-    <div>
-      123
-    </div>)
+      <Router>
+      <div>
+
+          <Route Path="/zhaoolee/Blog" key="/zhaoolee/Blog" 
+          component = {
+             () => <Article
+             
+             />
+            }
+          />
+
+      </div>
+      </Router>
+      )
   }
 }
 
 
-export default Index;
+ReactDOM.render(<Index/> , document.getElementById('root'))

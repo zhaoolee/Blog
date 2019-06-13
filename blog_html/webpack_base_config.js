@@ -14,7 +14,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'zhaoolee-[name].[hash:8].js',
-        publicPath: '/'
+        publicPath: './'
     },
     optimization: {
       // runtimeChunk: 'single',
