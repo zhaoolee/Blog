@@ -24,11 +24,17 @@ class Index extends React.Component{
       <Router>
       <div>
 
-          <Route Path="/zhaoolee/Blog" key="/zhaoolee/Blog" 
+          <Route Path= "/zhaoolee/Blog" key="/zhaoolee/Blog" 
           component = {
              () => <Article
              
              />
+            }
+          />
+
+          <Route Path="/" key="/" 
+          component = {
+             () => <div></div>
             }
           />
 

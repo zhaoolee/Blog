@@ -14,7 +14,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'zhaoolee-[name].[hash:8].js',
-        publicPath: './'
+        publicPath: '/'
     },
     optimization: {
       // runtimeChunk: 'single',
@@ -50,9 +50,9 @@ module.exports = {
       new webpack.HashedModuleIdsPlugin(), // 根据模块的相对路径生成 HASH 作为模块 ID
       new HtmlWebpackPlugin({
         // 虚拟的html文件名 index.html
-        filename: 'index.html',
+        filename:  "index.html",
         // 虚拟html的模板为 src下的index.html
-        template: path.resolve(__dirname, './src/index.html')
+        template: './src/index.html'
     }),
       //将images拷贝到dist目录
       new CopyPlugin([
@@ -61,7 +61,7 @@ module.exports = {
       ]),
       // 添加版权
       new webpack.BannerPlugin({
-        banner: "Copyright © 2019 GaoTeng. All Rights Reserved."
+        banner: "Copyright © 2019 FANGYUANXIAOZHAN. All Rights Reserved."
       })
     ],
     // 配置loader

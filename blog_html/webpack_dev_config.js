@@ -9,7 +9,7 @@ module.exports = merge(webpack_base_config, {
     mode: 'development',
     // 配置开发服务器, 并配置自动刷新
     devServer: {
-        contentBase: path.join(__dirname),
+        // contentBase: path.join(__dirname),
         // 服务端口为9000
         port: 9600,
         host: "127.0.0.1",

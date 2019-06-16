@@ -1,5 +1,4 @@
 const express = require("express");
-const expressStatic = require("express-static");
 const superagent = require('superagent');
 const bodyParser = require('body-parser')
 
