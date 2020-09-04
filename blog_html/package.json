@@ -73,7 +73,7 @@
     "react-router-dom": "^4.3.1",
     "react-svg": "^8.0.0",
     "react-transition-group": "^2.7.0",
-    "showdown": "^1.9.0",
+    "showdown": "^1.9.1",
     "superagent": "^5.1.0"
   }
 }
