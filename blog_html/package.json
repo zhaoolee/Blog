@@ -67,7 +67,7 @@
     "connect-history-api-fallback": "^1.6.0",
     "echarts": "^4.2.1",
     "path-to-regexp": "^3.0.0",
-    "pm2": "^3.5.1",
+    "pm2": "^5.2.0",
     "rc-queue-anim": "^1.6.12",
     "react-loadable": "^5.5.0",
     "react-router-dom": "^4.3.1",
